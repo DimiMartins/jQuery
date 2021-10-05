@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Entendendo jQuery</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+    <!-- o jquery esta sendo referenciado aqui -->
+    <script src="js/jquery.js"></script>
+</head>
+
+<body class="conteudo exercicio">
+    <h1>Entendendo jQuery</h1>
+    <div>1</div>
+    <div>2</div>
+
+<!-- jQuery => é uma api que tem o foco muito grande
+em consultar elementos da propria pagina e manipular 
+esses elementos de alguma forma -->
+    <script>
+        /* Para referenciar um jquery usa o $ ou jQuery*/
+        /* A FORMA ABAIXO É A MAIS PADRÃO, PASSAR UM 
+        SELETOR PARA OBTER ELEMENTOS E ENCADEAR CHAMADAS*/
+        /* USANDO UM SELETOR PARA OBTER TODAS AS DIVS */
+        $('div')
+        /* AS 3 FUNÇÕES ABAIXO SEMPRE RETORNAM O MESMO OBJETO */ 
+        .hide(5000) /* hide => esconde os elementos, o parametro passado é o tempo que vai demorar para ser escondido*/
+        .show(5000) /* show = reexibe, faz aparecer o conteudo novamente, passa como parametro o tempo para reexibir  */
+        .fadeOut(5000) /* faz desaparecer de uma forma diferente do hide */
+        
+        /* PARA OBTER UM NÓ DA DOM  */
+        console.log($('div').get(0))
+        
+        /* FUNÇÕES UTILITÁRIAS */
+        console.log($.isEmptyObject({nome:null}))/* verefica se um objeto esta ou não vazio */
+        console.log('Posso usar tanto $ como jQuery')
+        console.log(jQuery.inArray(3,[1,2,3]))/* usado para saber se um determinado numero esta dentro de um array(caso não esteja retorna -1, se estiver vai retornar o proprio indice do array)*/
+        
+        /* COM JQUERY É POSSIVEL CRIAR PLUGINS, EXTENDER FUNCIONALIDADES DO PROPRIO JQUERY  */
+        $.fn.fundoVerde = function(){
+            /* this é o objeto que eu estou trabalhando */
+            this.css('backgroud-color', 'red')/* passo a propriedade e valor */
+            /* deixar a função valida para poder encadear outras funções */
+            return this
+        }
+        $('body').fundoVerde().fadeOut(1000)
+
+    </script>
+</body>
+
+<!-- DECORATOR => FAZER UMA EXTENSÃO DO OBJETO ADICIONA NOVAS FUNCIONALIDADES AO OBJETO
+SEM NECESSIDADE DE TER HERANÇA -->
+
+<!-- $('div') ==> o resultado disso é uma lista de objetos -->

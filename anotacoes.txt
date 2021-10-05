@@ -1,0 +1,11 @@
+j de javascrpit query de cosulta
+É uma biblioteca JavaScript extremamente popular
+ajuda a selececionar objetos dentro da dom e manipular do jeito que quiser
+Ajuda na busca de elementos e alteração da DOM
+Trabalha com manipulação de eventos, animações, Ajax...
+Pensado para trabalhar com conjunto de elementos
+Usa seletores CSS
+Encadeamento de chamadas (chaining)
+É de fácil extensão usando plugins
+Suporte múltiplos Browsers
+Só tem pontos positivos? Não!
